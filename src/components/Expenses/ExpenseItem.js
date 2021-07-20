@@ -4,10 +4,20 @@ import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
 function ExpenseItem(props) {
+  // array destructuring used to assign what the useState function returns. 
+  // The first element 'title', is appointed at the managed value that is returned by useState
+  // and the second element is a function that we can later call to set the Title 
+
   const [title, setTitle] = useState(props.title);
+  // We use useState for making sure that the ExpenseItem component function is being reevaluated when 
+  // a change occurs. 
+
+  // useState() always returns an array with 2 elements. First element is the current state value 
+  // and the second is a function for updating that element. 
 
   function clickHandler() {
     setTitle('updated');
+    // By calling this state updating function, the component function is re-executed.
   }
 
   return (
